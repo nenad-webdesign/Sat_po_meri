@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sat po meri</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+    <!-- Icons (FontAwesome for social icons and arrows) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- STICKY HEADER -->
+    <header id="header">
+        <div class="container header-wrap">
+            <img src="Img/Logo.png" class="logo" alt="Sat po meri logo">
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#pocetna" class="active">Početna</a></li>
+                <li><a href="#izdvajamo">Best Seller</a></li>
+                <li><a href="#satovi">Satovi</a></li>
+                <li><a href="#o-nama">O nama</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH BACKGROUND VIDEO -->
+    <section class="hero" id="pocetna">
+        <video class="hero-video-bg" src="Videos/Hero-video.mp4" autoplay muted loop playsinline></video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Ne možemo vam kupiti vreme, ali zato možemo</p>
+            <h1 class="hero-title">Satove koji oduzimaju dah, a ostavljaju status.</h1>
+            <a href="#satovi" class="btn-gold">Pogledaj ponudu</a>
+        </div>
+    </section>
+
+    <!-- FEATURED / BEST SELLER SECTION -->
+    <!-- Text on the left, cards on the right, side by side until the layout wraps.
+         Cards reuse the exact catalog-item structure so they're identical to the catalog. -->
+    <section class="featured-section" id="izdvajamo">
+        <div class="container">
+            <div class="featured-content">
+                <div class="section-header">
+                    <h2 class="section-title">Izdvajamo najčešći izbor ljubitelja satova</h2>
+                    <p class="section-desc">Ovo su modeli koje ljudi najčešće biraju, moramo priznati, s razlogom. Modeli su ručno napravljeni, visokog kvaliteta i po pristupačnoj ceni. Možete ih nositi za specijalne prilike ili svaki dan.</p>
+                </div>
+
+                <div class="featured-grid">
+                    <!-- Datejust Chocolate -->
+                    <div class="catalog-item">
+                        <div class="item-img-wrapper">
+                            <img src="Img/Dchocolate.png" alt="Datejust Chocolate">
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-name">Datejust Chocolate</h3>
+                            <p class="item-desc">Prečnik: 39mm, staklo: Safirno, narukvica: Čelik 904L, mehanizam: Seiko NH35 Automatski.</p>
+                        </div>
+                        <div class="item-footer">
+                            <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                        </div>
+                    </div>
+
+                    <!-- Datejust Olive Green -->
+                    <div class="catalog-item">
+                        <div class="item-img-wrapper">
+                            <img src="Img/Olive.jpg" alt="Datejust Olive Green">
+                        </div>
+                        <div class="item-info">
+                            <h3 class="item-name">Datejust Olive Green</h3>
+                            <p class="item-desc">Prečnik: 39mm, staklo: Safirno, narukvica: Čelik 904L, mehanizam: Seiko NH35 Automatski.</p>
+                        </div>
+                        <div class="item-footer">
+                            <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOG GRID SECTION WITH DROP DOWN FILTER SYSTEM -->
+    <section class="catalog-section" id="satovi">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Satovi</h2>
+            </div>
+
+            <!-- Filters -->
+            <div class="catalog-controls">
+                <!-- Model Filter -->
+                <div class="filter-dropdown-container">
+                    <button class="filter-trigger" onclick="toggleDropdown('dropdown-model', this)">
+                        <span>Model</span> <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="dropdown-model">
+                        <label class="filter-option">
+                            <input type="checkbox" value="datejust" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Datejust
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="nautilus" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Nautilus
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="daytona" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Daytona
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="submariner" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Submariner
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Gender Filter -->
+                <div class="filter-dropdown-container">
+                    <button class="filter-trigger" onclick="toggleDropdown('dropdown-gender', this)">
+                        <span>Pol</span> <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="dropdown-gender">
+                        <label class="filter-option">
+                            <input type="checkbox" value="muski" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Muški
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="zenski" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Ženski
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Color Filter -->
+                <div class="filter-dropdown-container">
+                    <button class="filter-trigger" onclick="toggleDropdown('dropdown-color', this)">
+                        <span>Boja</span> <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-panel" id="dropdown-color">
+                        <label class="filter-option">
+                            <input type="checkbox" value="crna" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Crna
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="bela" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Bela
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="plava" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Plava
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="svetlo-plava" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Svetlo-Plava
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="zelena" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Zelena
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="cokoladna" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Čokoladna
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="roze" onchange="applyFilters()">
+                            <span class="checkbox-custom"></span> Roze zlato
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Reset Button -->
+                <button class="btn-reset" id="btn-reset" onclick="resetFilters()">
+                    <i class="fa-solid fa-rotate-left"></i> Resetuj filtere
+                </button>
+            </div>
+
+            <!-- Grid Items -->
+            <div class="catalog-grid" id="catalog-grid">
+
+                <!-- Datejust Blue -->
+                <div class="catalog-item" data-model="datejust" data-gender="muski" data-color="plava">
+                    <div class="item-img-wrapper">
+                        <img src="Img/Plava.jpg" alt="Datejust Blue">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Datejust Blue</h3>
+                        <p class="item-desc">Prečnik: 39mm, staklo: Safirno, narukvica: Čelik 904L, mehanizam: Seiko NH35 Automatski.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Datejust Black -->
+                <div class="catalog-item" data-model="datejust" data-gender="muski" data-color="crna">
+                    <div class="item-img-wrapper">
+                        <img src="Img/Gray.jpg" alt="Datejust Black">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Datejust Black</h3>
+                        <p class="item-desc">Prečnik: 39mm, staklo: Safirno, narukvica: Čelik 904L, mehanizam: Seiko NH35 Automatski.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Datejust Light Blue -->
+                <div class="catalog-item" data-model="datejust" data-gender="muski" data-color="svetlo-plava">
+                    <div class="item-img-wrapper">
+                        <img src="Img/Light Blue.jpg" alt="Datejust Light Blue">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Datejust Light Blue</h3>
+                        <p class="item-desc">Prečnik: 39mm, staklo: Safirno, narukvica: Čelik 904L, mehanizam: Seiko NH35 Automatski.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Datejust White -->
+                <div class="catalog-item" data-model="datejust" data-gender="muski" data-color="bela">
+                    <div class="item-img-wrapper">
+                        <img src="Img/White.jpg" alt="Datejust White">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Datejust White</h3>
+                        <p class="item-desc">Prečnik: 39mm, staklo: Safirno, narukvica: Čelik 904L, mehanizam: Seiko NH35 Automatski.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Nautilus Rose Gold -->
+                <div class="catalog-item" data-model="nautilus" data-gender="muski" data-color="roze">
+                    <div class="item-img-wrapper">
+                        <img src="Img/Nautilus 1.jpg" alt="Nautilus Rose Gold">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Nautilus Rose Gold</h3>
+                        <p class="item-desc">Prečnik: 39mm, staklo: Safirno, narukvica: Čelik 904L, mehanizam: Seiko NH35 Automatski.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Nautilus Black -->
+                <div class="catalog-item" data-model="nautilus" data-gender="muski" data-color="crna">
+                    <div class="item-img-wrapper">
+                        <img src="Img/N crni.jpg" alt="Nautilus Black">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Nautilus Black</h3>
+                        <p class="item-desc">Prečnik: 39mm, staklo: Safirno, narukvica: Čelik 904L, mehanizam: Seiko NH35 Automatski.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Nautilus Olive Green -->
+                <div class="catalog-item" data-model="nautilus" data-gender="muski" data-color="zelena">
+                    <div class="item-img-wrapper">
+                        <img src="Img/N zeleni.jpg" alt="Nautilus Olive Green">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Nautilus Olive Green</h3>
+                        <p class="item-desc">Prečnik: 39mm, staklo: Safirno, narukvica: Čelik 904L, mehanizam: Seiko NH35 Automatski.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Nautilus Blue -->
+                <div class="catalog-item" data-model="nautilus" data-gender="muski" data-color="plava">
+                    <div class="item-img-wrapper">
+                        <img src="Img/N tamno plavi.jpg" alt="Nautilus Blue">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Nautilus Blue</h3>
+                        <p class="item-desc">Prečnik: 39mm, staklo: Safirno, narukvica: Čelik 904L, mehanizam: Seiko NH35 Automatski.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Nautilus Tiffany -->
+                <div class="catalog-item" data-model="nautilus" data-gender="zenski" data-color="svetlo-plava">
+                    <div class="item-img-wrapper">
+                        <img src="Img/N svetlo plavi.jpg" alt="Nautilus Tiffany">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Nautilus Tiffany</h3>
+                        <p class="item-desc">Spoj japanske preciznosti i ručnog zanata. Svaki model je pažljivo sklopljen i testiran.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Daytona White -->
+                <div class="catalog-item" data-model="daytona" data-gender="muski" data-color="bela">
+                    <div class="item-img-wrapper">
+                        <img src="Img/Daytona 1.jpg" alt="Daytona White">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Daytona White</h3>
+                        <p class="item-desc">Mehanizam: VK63, staklo safirno - otporno na ogrebotine, kućište i narukvica od nerđajućeg čelika.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Daytona Black -->
+                <div class="catalog-item" data-model="daytona" data-gender="muski" data-color="crna">
+                    <div class="item-img-wrapper">
+                        <img src="Img/Daytona 2.jpg" alt="Daytona Black">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Daytona Black</h3>
+                        <p class="item-desc">Mehanizam: VK63, staklo safirno - otporno na ogrebotine, kućište i narukvica od nerđajućeg čelika.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Daytona Rose -->
+                <div class="catalog-item" data-model="daytona" data-gender="muski" data-color="roze">
+                    <div class="item-img-wrapper">
+                        <img src="Img/Daytona 3.jpg" alt="Daytona Rose">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Daytona Rose</h3>
+                        <p class="item-desc">Mehanizam: VK63, staklo safirno - otporno na ogrebotine, kućište i narukvica od nerđajućeg čelika.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Daytona Blue -->
+                <div class="catalog-item" data-model="daytona" data-gender="muski" data-color="plava">
+                    <div class="item-img-wrapper">
+                        <img src="Img/Daytona 4.jpg" alt="Daytona Blue">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Daytona Blue</h3>
+                        <p class="item-desc">Mehanizam: VK63, staklo safirno - otporno na ogrebotine, kućište i narukvica od nerđajućeg čelika.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Submariner Green -->
+                <div class="catalog-item" data-model="submariner" data-gender="muski" data-color="zelena">
+                    <div class="item-img-wrapper">
+                        <img src="Img/Submariner green.jpg" alt="Submariner Green">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Submariner Green</h3>
+                        <p class="item-desc">Mehanizam: NH35, 40mm, staklo otporno na ogrebotine, kućište i narukvica od nerđajućeg čelika.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Submariner Black -->
+                <div class="catalog-item" data-model="submariner" data-gender="muski" data-color="crna">
+                    <div class="item-img-wrapper">
+                        <img src="Img/Submariner crni.jpg" alt="Submariner Black">
+                    </div>
+                    <div class="item-info">
+                        <h3 class="item-name">Submariner Black</h3>
+                        <p class="item-desc">Mehanizam: NH35, 40mm, staklo otporno na ogrebotine, kućište i narukvica od nerđajućeg čelika.</p>
+                    </div>
+                    <div class="item-footer">
+                        <a href="https://instagram.com" target="_blank" class="btn-outline">Saznaj više</a>
+                    </div>
+                </div>
+
+                <!-- Instagram CTA Card -->
+                <div class="catalog-item" style="justify-content: center; align-items: center; text-align: center; border-style: dashed;">
+                    <div style="padding: 24px;">
+                        <i class="fa-brands fa-instagram" style="font-size: 40px; color: #c5a880; margin-bottom: 16px;"></i>
+                        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">Još modela možete da pogledate na našem Instagram profilu.</p>
+                        <a href="https://instagram.com" target="_blank" class="btn-gold" style="padding: 10px 20px; font-size: 12px;">Poseti Profil</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- O NAMA (ABOUT) SECTION -->
+    <section class="about-section" id="o-nama">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h2 class="serif-font" style="font-size: clamp(28px, 4vw, 42px);">O nama</h2>
+                <p>Pravimo ručno napravljene satove visokog kvaliteta. Imamo godine iskustva u ovom poslu. Za sva pitanja nam se možete obratiti putem Instagrama. Nakon odabira modela, za njegovu izradu je potrebno 20-30 dana, a prethodno se ostavlja avans. Sat možete preuzeti uživo u Beogradu ili ga možete poručiti poštom.</p>
+            </div>
+
+            <!-- Video Stack Right Side — videos alternate (JS-controlled), only one plays at a time.
+                 No autoplay/loop attributes here on purpose: script.js starts the first one and
+                 swaps to the other when it ends. -->
+            <div class="about-video-stack" id="about-video-stack">
+                <div class="stack-item stack-item-1">
+                    <video src="Videos/about-video.mp4" muted playsinline preload="auto"></video>
+                </div>
+                <div class="stack-item stack-item-2 active">
+                    <video src="Videos/waterproof-video.mp4" muted playsinline preload="auto"></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <h2 class="section-title">Najčešća pitanja</h2>
+            </div>
+
+            <div class="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Kako da poručim sat?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sat možete poručiti direktnim kontaktom preko našeg Instagram profila. Nakon što dogovorimo željeni model i specifikacije, ostavlja se avans i kreće se sa izradom sata.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Da li mogu da tražim još neke specifične modele?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Da, vršimo izradu satova po porudžbini. Pošaljite nam sliku ili opis modela koji želite na Instagram, pa ćemo vas obavestiti o mogućnostima izrade i ceni.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Koliko traje izrada sata?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Rok izrade zavisi od kompleksnosti modela i dostupnosti delova, ali uobičajeno vreme izrade iznosi između 20 i 30 dana od dana uplate avansa.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Da li mogu lično da preuzmem sat?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sat možete dobiti putem pošte ili ga lično preuzeti u Beogradu uz prethodni dogovor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-wrap">
+                <div class="footer-info">
+                    <div class="logo-img"><img src="Img/Logo.png" alt="Sat po meri logo"></div>
+                    <div class="footer-details">
+                        <p>Sva prava zadržava Satpomeri.</p>
+                        <p>11000 Beograd</p>
+                        <p>Email: <strong>example@gmail.com</strong></p>
+                        <p>Tel: <strong>1234567890</strong></p>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://tiktok.com" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sat Po Meri. Sva prava zadržana.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interaction scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

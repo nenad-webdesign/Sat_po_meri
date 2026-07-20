@@ -625,12 +625,12 @@ section {
 
 /* Fixed fan-stack positions (kept regardless of which video is active) */
 .stack-item-1 {
-    transform: translate(-30px, -20px) rotate(-4deg);
+    transform: translate(-30px, -20px) rotate(0 deg);
     z-index: 1;
 }
 
 .stack-item-2 {
-    transform: translate(30px, 20px) rotate(4deg);
+    transform: translate(30px, 20px) rotate(0 deg);
     z-index: 2;
 }
 
@@ -645,11 +645,11 @@ section {
 
 /* Hover animation for stack items (positions only — opacity stays controlled by .active) */
 .about-video-stack:hover .stack-item-1 {
-    transform: translate(-60px, -40px) rotate(-8deg) scale(1.02);
+    transform: translate(-60px, -40px) rotate(0 deg) scale(1.02);
 }
 
 .about-video-stack:hover .stack-item-2 {
-    transform: translate(50px, 30px) rotate(8deg) scale(1.05);
+    transform: translate(50px, 30px) rotate(0 deg) scale(1.05);
 }
 
 /* --- FAQ SECTION --- */
@@ -847,5 +847,34 @@ footer {
     }
     .featured-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* --- MOBILE TYPOGRAFIJA & PROPORCIJE --- */
+@media (max-width: 768px) {
+    /* H1 i H2 veći u odnosu na tekst na telefonu */
+    .hero-title {
+        font-size: clamp(38px, 9vw, 52px);
+    }
+
+    .section-title {
+        font-size: clamp(30px, 7vw, 40px);
+    }
+
+    /* About H2 koristi inline clamp, pa ga ovde nadjačavamo */
+    .about-text h2 {
+        font-size: clamp(30px, 7vw, 40px) !important;
+    }
+
+    /* Eyebrow tekst = kao body text na manjim ekranima */
+    .hero-subtitle {
+        font-size: 16px;
+        letter-spacing: 0.08em;
+    }
+
+    /* Glavno hero dugme proporcionalnije */
+    .hero .btn-gold {
+        padding: 14px 36px;
+        font-size: 15px;
     }
 }

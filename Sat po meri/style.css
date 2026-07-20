@@ -625,12 +625,12 @@ section {
 
 /* Fixed fan-stack positions (kept regardless of which video is active) */
 .stack-item-1 {
-    transform: translate(-30px, -20px) rotate(0 deg);
+    transform: translate(-30px, -20px) rotate(0deg);
     z-index: 1;
 }
 
 .stack-item-2 {
-    transform: translate(30px, 20px) rotate(0 deg);
+    transform: translate(30px, 20px) rotate(0deg);
     z-index: 2;
 }
 
@@ -645,11 +645,11 @@ section {
 
 /* Hover animation for stack items (positions only — opacity stays controlled by .active) */
 .about-video-stack:hover .stack-item-1 {
-    transform: translate(-60px, -40px) rotate(0 deg) scale(1.02);
+    transform: translate(-60px, -40px) rotate(0deg) scale(1.02);
 }
 
 .about-video-stack:hover .stack-item-2 {
-    transform: translate(50px, 30px) rotate(0 deg) scale(1.05);
+    transform: translate(50px, 30px) rotate(0deg) scale(1.05);
 }
 
 /* --- FAQ SECTION --- */
@@ -876,5 +876,25 @@ footer {
     .hero .btn-gold {
         padding: 14px 36px;
         font-size: 15px;
+    }
+}
+
+/* --- ABOUT VIDEO: PRAVI UGAO (BEZ NAGIBA) NA TELEFONU --- */
+@media (max-width: 992px) {
+    .stack-item-1 {
+        transform: translate(-30px, -20px) rotate(0deg);
+    }
+
+    .stack-item-2 {
+        transform: translate(30px, 20px) rotate(0deg);
+    }
+
+    /* Hover nagib takođe ispravljen na malim ekranima */
+    .about-video-stack:hover .stack-item-1 {
+        transform: translate(-40px, -30px) rotate(0deg) scale(1.02);
+    }
+
+    .about-video-stack:hover .stack-item-2 {
+        transform: translate(40px, 30px) rotate(0deg) scale(1.05);
     }
 }

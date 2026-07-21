@@ -286,8 +286,8 @@ section {
 
 /* Text and cards side by side until the layout wraps (see media queries) */
 .featured-content {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
+    display: flex;
+    flex-direction: column;
     gap: 60px;
     align-items: center;
 }
@@ -302,7 +302,7 @@ section {
    the two reused cards side by side within the right-hand column. */
 .featured-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 

@@ -289,7 +289,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 60px;
-    align-items: center;
+    align-items: left;
 }
 
 /* This section-header sits beside the cards, not above them, so no bottom margin */
